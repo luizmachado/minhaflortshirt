@@ -2,7 +2,7 @@ namespace minhaflortshirt.Models
 {
     public class Camiseta
     {
-        public int id_camiseta {get; set;}
+        public int Id {get; set;}
         public string nome_camiseta {get; set;}
         public string tamanho_camiseta {get; set;}
         public string cor_camiseta {get; set;}
