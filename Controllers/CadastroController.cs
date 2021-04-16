@@ -6,6 +6,11 @@ namespace minhaflortshirt.Controllers
 {
     public class CadastroController : Controller
     {
+        public IActionResult Fornecedor()
+        {
+            return View();
+        }
+       [HttpPost]
        public IActionResult CadastroFornecedor(Fornecedor novoFornecedor)
        {
            try
