@@ -26,5 +26,29 @@ namespace minhaflortshirt.Controllers
            }
 
        } 
+        public IActionResult Camiseta()
+        {
+            CadastroViewModel viewModel = new CadastroViewModel();
+
+            FornecedorRepository fr = new FornecedorRepository();
+            viewModel.Fornecedores = fr.List();
+            return View(viewModel);
+        }
+       [HttpPost]
+       public IActionResult CadastroCamiseta(Camiseta novaCamiseta)
+       {
+           try
+           {
+               CamisetaRepository cr = new CamisetaRepository();
+               cr.Insert(novaCamiseta);
+
+               return Json(new { Status = "OK"});
+           }
+           catch(Exception e)
+           {
+               return Json(new {Status = "FALHA", Mensagem = e.Message});
+           }
+
+       } 
     }
 }
