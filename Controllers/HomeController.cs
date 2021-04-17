@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MinhaFlorTshirt.Models;
+using minhaflortshirt.Models;
 
-namespace MinhaFlorTshirt.Controllers
+namespace minhaflortshirt.Controllers
 {
     public class HomeController : Controller
     {

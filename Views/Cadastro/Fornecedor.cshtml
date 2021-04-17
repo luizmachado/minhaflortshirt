@@ -1,12 +1,12 @@
 @{
-    Layout = "_LayoutSite";
+    Layout = "_Layout";
     ViewData["Title"] = "Cadastro Fornecedor";
 }
 
 <div class="row">
     <div class="col" id="divFormularioFornecedor">
         <h2>Cadastre o Fornecedor</h2>
-        <form id="formCadastro">
+        <form id="formCadastroFornecedor">
             <div class="form-group">
                 <label for="txtNome">Nome: </label>
                 <input type="text" id="txtNome" class="form-control"
@@ -31,7 +31,7 @@
         </form>
     </div>
     <div class="col-md-8" id="divCadastrado" style="display: none;">
-        <h2>Obrigado pelo seu registro. Em breve contactaremos de volta !</h2>
+        <h2>Fornecedor cadastrado com sucesso !</h2>
     </div>
 </div>
 <div class="modal" id="modalLoading">

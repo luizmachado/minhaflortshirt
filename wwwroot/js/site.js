@@ -19,7 +19,7 @@ function realizaPostFornecedor()
             if(data.status == "OK")
             {
                 $("#modalLoading").modal('hide');
-                $("#divFormulario").hide();
+                $("#divFormularioFornecedor").hide();
                 $("#divCadastrado").fadeIn();
             }
             else
@@ -49,7 +49,7 @@ function realizaPostCamiseta()
             if(data.status == "OK")
             {
                 $("#modalLoading").modal('hide');
-                $("#divFormulario").hide();
+                $("#divFormularioCamiseta").hide();
                 $("#divCadastrado").fadeIn();
             }
             else
