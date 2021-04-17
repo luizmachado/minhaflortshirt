@@ -1,0 +1,28 @@
+@model ColaboradorViewModel
+@{
+    ViewData["Title"] = "Lista de Colaboradores";
+}
+<h2>Relação de Colaboradores</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Login</th>
+                <th>Nascimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Colaborador c in Model.Colaboradores)
+            {
+                <tr class="table-light">
+                    <td>@c.Id</td>
+                    <td>@c.nome_colaborador</td>
+                    <td>@c.login_colaborador</td>
+                    <td>@c.nascimento_colaborador</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
