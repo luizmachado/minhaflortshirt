@@ -1,0 +1,34 @@
+@model CamisetaViewModel
+@{
+    ViewData["Title"] = "Lista de Camisetas";
+}
+<h2>Relação de Estoque</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Tamanho</th>
+                <th>Cor</th>
+                <th>Estampa</th>
+                <th>Quantidade</th>
+                <th>Fornecedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Camiseta c in Model.Camisetas)
+            {
+                <tr class="table-light">
+                    <td>@c.Id</td>
+                    <td>@c.nome_camiseta</td>
+                    <td>@c.tamanho_camiseta</td>
+                    <td>@c.cor_camiseta</td>
+                    <td>@c.estampa_camiseta</td>
+                    <td>@c.quantidade_camiseta</td>
+                    <td>@c.FornecedorId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
