@@ -1,0 +1,30 @@
+@model FornecedorViewModel
+@{
+    ViewData["Title"] = "Lista de Fornecedores";
+}
+<h2>Relação de Fornecedores</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Site</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Fornecedor c in Model.Fornecedores)
+            {
+                <tr class="table-light">
+                    <td>@c.Id</td>
+                    <td>@c.nome_fornecedor</td>
+                    <td>@c.telefone_fornecedor</td>
+                    <td>@c.email_fornecedor</td>
+                    <td>@c.site_fornecedor</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
