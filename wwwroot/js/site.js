@@ -88,7 +88,33 @@ function realizaPostColaborador()
         });
 }
 
+function realizaPostCliente()
+{
+    var parametros =
+    {
+        nome_cliente: $("#txtNome").val(),
+        telefone_cliente: $("#txtFone").val(),
+        email_cliente: $("#txtEmail").val(),
+        tamanho_cliente: $("input[name=inlineRadioOptions]:checked", '#formCadastroCliente').val()
+    };
 
+    $("#modalLoading").modal("show");
+    $.post("/Cadastro/CadastroCliente", parametros)
+        .done(function(data)
+        {
+            if(data.status == "OK")
+            {
+                $("#modalLoading").modal('hide');
+                $("#divFormularioCamiseta").hide();
+                $("#divCadastrado").fadeIn();
+            }
+            else
+            {
+                $("#modalLoading").modal('hide');
+                alert(data.mensagem);
+            }
+        });
+}
 
 $(document).ready(
     function(){
@@ -104,5 +130,9 @@ $(document).ready(
         $("#formCadastroColaborador").submit(function(e){
             e.preventDefault();
             realizaPostColaborador();
+        })
+        $("#formCadastroCliente").submit(function(e){
+            e.preventDefault();
+            realizaPostCliente();
         })
     });
