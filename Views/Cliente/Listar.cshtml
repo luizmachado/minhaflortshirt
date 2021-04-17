@@ -1,0 +1,30 @@
+@model ClienteViewModel
+@{
+    ViewData["Title"] = "Lista de Clientes";
+}
+<h2>Relação de Clientes</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Tamanho</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Cliente c in Model.Clientes)
+            {
+                <tr class="table-light">
+                    <td>@c.Id</td>
+                    <td>@c.nome_cliente</td>
+                    <td>@c.telefone_cliente</td>
+                    <td>@c.email_cliente</td>
+                    <td>@c.tamanho_cliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
