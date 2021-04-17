@@ -29,10 +29,10 @@ namespace minhaflortshirt.Controllers
 
         public IActionResult Camiseta()
         {
-            CadastroViewModel viewModel = new CadastroViewModel();
-
+            FornecedorViewModel viewModel = new FornecedorViewModel();
             FornecedorRepository fr = new FornecedorRepository();
             viewModel.Fornecedores = fr.ListFornecedor();
+
             return View(viewModel);
         }
        [HttpPost]

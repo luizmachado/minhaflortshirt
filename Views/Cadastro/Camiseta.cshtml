@@ -1,10 +1,11 @@
+@model FornecedorViewModel
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Cadastro Camiseta";
 }
 
 <div class="row">
-    <div class="col" id="divFormulario">
+    <div class="col" id="divFormularioCamiseta">
         <h2>Cadastre Camisetas</h2>
         <form id="formCadastroCamiseta">
             <div class="form-group">
@@ -49,14 +50,24 @@
                 <input type="number" id="intQuantidade" class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="selFornecedor">Fornecedor: </label>
-                <input type="number" id="selFornecedor" class="form-control"/>
+                <label for="selFornecedor">Fornecedor:</label>
+                <select id="selFornecedor" class="form-control">
+                    <option value="0">-- Escolha o Farnecedor --</option>
+                    @if (Model.Fornecedores != null)
+                    {
+                        foreach(Fornecedor f in Model.Fornecedores)
+                        {
+                            <option value="@f.Id">@f.nome_fornecedor</option>
+                        }
+                    }
+                </select>
             </div>
+            <div class="form-group">
             <button type="submit" class="btn btn-primary float-right">Enviar</button>
         </form>
     </div>
     <div class="col-md-8" id="divCadastrado" style="display: none;">
-        <h2>Obrigado pelo seu registro. Em breve contactaremos de volta !</h2>
+        <h2>T-Shirt cadastrada com sucesso !</h2>
     </div>
 </div>
 <div class="modal" id="modalLoading">
