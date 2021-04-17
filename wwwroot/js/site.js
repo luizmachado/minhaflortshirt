@@ -60,6 +60,35 @@ function realizaPostCamiseta()
         });
 }
 
+function realizaPostColaborador()
+{
+    var parametros =
+    {
+        nome_colaborador: $("#txtNome").val(),
+        login_colaborador: $("#txtLogin").val(),
+        senha_colaborador: $("#txtSenha").val(),
+        nascimento_colaborador: $("#dateNasc").val()
+    };
+
+    $("#modalLoading").modal("show");
+    $.post("/Cadastro/CadastroColaborador", parametros)
+        .done(function(data)
+        {
+            if(data.status == "OK")
+            {
+                $("#modalLoading").modal('hide');
+                $("#divFormularioColaborador").hide();
+                $("#divCadastrado").fadeIn();
+            }
+            else
+            {
+                $("#modalLoading").modal('hide');
+                alert(data.mensagem);
+            }
+        });
+}
+
+
 
 $(document).ready(
     function(){
@@ -71,5 +100,9 @@ $(document).ready(
         $("#formCadastroCamiseta").submit(function(e){
             e.preventDefault();
             realizaPostCamiseta();
+        })
+        $("#formCadastroColaborador").submit(function(e){
+            e.preventDefault();
+            realizaPostColaborador();
         })
     });

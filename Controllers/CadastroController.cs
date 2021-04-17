@@ -31,7 +31,7 @@ namespace minhaflortshirt.Controllers
         {
             FornecedorViewModel viewModel = new FornecedorViewModel();
             FornecedorRepository fr = new FornecedorRepository();
-            viewModel.Fornecedores = fr.ListFornecedor();
+            viewModel.Fornecedores = fr.List();
 
             return View(viewModel);
         }
@@ -57,12 +57,12 @@ namespace minhaflortshirt.Controllers
             return View();
         }
        [HttpPost]
-       public IActionResult CadastroCliente(Cliente novoClliente)
+       public IActionResult CadastroCliente(Cliente novoCliente)
        {
            try
            {
                ClienteRespository cr = new ClienteRespository();
-               cr.Insert(novoClliente);
+               cr.Insert(novoCliente);
 
                return Json(new { Status = "OK"});
            }
@@ -72,6 +72,25 @@ namespace minhaflortshirt.Controllers
            }
 
        } 
+        public IActionResult Colaborador()
+        {
+            return View();
+        }
+       [HttpPost]
+       public IActionResult CadastroColaborador(Colaborador novoColaborador)
+       {
+           try
+           {
+               ColaboradorRepository cr = new ColaboradorRepository();
+               cr.Insert(novoColaborador);
 
+               return Json(new { Status = "OK"});
+           }
+           catch(Exception e)
+           {
+               return Json(new {Status = "FALHA", Mensagem = e.Message});
+           }
+
+       } 
     }
 }

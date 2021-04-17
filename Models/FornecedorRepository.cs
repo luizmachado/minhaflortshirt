@@ -14,7 +14,7 @@ namespace minhaflortshirt.Models
             }
         }
 
-        public ICollection<Fornecedor> ListFornecedor()
+        public ICollection<Fornecedor> List()
         {
             using(var context = new AppDBContext())
             {
