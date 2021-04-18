@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Minha Flor T-Shirts</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body class="cheader">
+    <header>
+        <nav class="navbar navbar-dark text-light" id="menu">
+            <h2>Minha Flor T-Shirts</h2>
+            <button class="custom-btn btn-8 nav-item"><span>T-Shirts</span></button>
+            <button class="custom-btn btn-8 nav-item"><span>Clientes</span></button>
+            <button class="custom-btn btn-8 nav-item"><span>Fornecedores</span></button>
+            <button class="custom-btn btn-8 nav-item mr-5"><span>Colaboradores</span></button>
+        </nav>
+    </header>
+    <main role="main" class="container-fluid mt-3">
+        @RenderBody()
+    </main>
+    <footer class="border-top footer text-muted bg-dark">
+        <div class="container">
+            &copy; 2021 - Escola Futuro
+        </div>
+    </footer>
+
+    <!-- Scritps JS -->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
