@@ -3,35 +3,40 @@
     Layout = "_LayoutSite";
     ViewData["Title"] = "Lista de Camisetas";
 }
-<div class="p-3 mb-2 bg-dark text-light rounded">
-    <h2>Relação de Camisetas</h2>
-</div>
-<div class="table-responsive rounded">
-    <table class="table table-dark rounded">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Tamanho</th>
-                <th>Cor</th>
-                <th>Estampa</th>
-                <th>Quantidade</th>
-                <th>Fornecedor</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Camiseta c in Model.Camisetas)
-            {
+<div id="lista" style="display: inline;">
+    <div class="p-3 mb-2 bg-dark text-light rounded">
+        <h2>Relação de Camisetas</h2>
+    </div>
+    <div class="table-responsive rounded">
+        <table class="table table-dark rounded">
+            <thead>
                 <tr>
-                    <td>@c.Id</td>
-                    <td>@c.nome_camiseta</td>
-                    <td>@c.tamanho_camiseta</td>
-                    <td>@c.cor_camiseta</td>
-                    <td>@c.estampa_camiseta</td>
-                    <td>@c.quantidade_camiseta</td>
-                    <td>@c.FornecedorId</td>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Tamanho</th>
+                    <th>Cor</th>
+                    <th>Estampa</th>
+                    <th>Quantidade</th>
+                    <th>Fornecedor</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (Camiseta c in Model.Camisetas)
+                {
+                    <tr>
+                        <td>@c.Id</td>
+                        <td>@c.nome_camiseta</td>
+                        <td>@c.tamanho_camiseta</td>
+                        <td>@c.cor_camiseta</td>
+                        <td>@c.estampa_camiseta</td>
+                        <td>@c.quantidade_camiseta</td>
+                        <td>@c.FornecedorId</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id=cadastro style="display: inline;">
+    @Html.Partial("~/Views/Cadastro/Camiseta_inner.cshtml", new FornecedorViewModel())
 </div>

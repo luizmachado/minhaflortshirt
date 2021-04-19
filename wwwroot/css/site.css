@@ -71,10 +71,14 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+/* CSS Personalizado */
 .cheader {
   background-image: url("../images/site/logo_background.jpg");
   min-height: 50rem;
   background-size: cover;
+}
+
+#cadastro {
 }
 
 /* Estilo do menu */
