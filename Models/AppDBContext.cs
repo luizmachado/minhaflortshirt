@@ -6,7 +6,7 @@ namespace minhaflortshirt.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("Server=localhost;Database=Escola;Uid=escola;Pwd=escola123;");
+            optionsBuilder.UseMySql("Server=localhost;DataBase=Escola;Uid=escola;Pwd=escola123;");
         }
 
         public DbSet<Camiseta> Camisetas {get; set;}
