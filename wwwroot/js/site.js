@@ -116,6 +116,12 @@ function realizaPostCliente()
         });
 }
 
+function alternaFuncao()
+{
+    $("#lista").hide();
+    $("#cadastro").show();
+}
+
 $(document).ready(
     function(){
 

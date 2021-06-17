@@ -1,26 +1,13 @@
-@{
-    Layout = "_Layout";
-    ViewData["Title"] = "Cadastro Cliente";
-}
+@model FornecedorViewModel
 
-<div class="row p-3 mb-2 bg-dark text-light rounded">
-    <div class="col" id="divFormularioCliente">
-        <h2>Cadastre o Colaborador</h2>
-        <form id="formCadastroCliente">
+<div class="row bg-dark text-light mx-3 p-3 mb-2 rounded">
+    <div class="col" id="divFormularioCamiseta">
+        <h2>Cadastre Camisetas</h2>
+        <form id="formCadastroCamiseta">
             <div class="form-group">
                 <label for="txtNome">Nome: </label>
                 <input type="text" id="txtNome" class="form-control"
-                 placeholder="Nome Completo"/>
-            </div>
-            <div class="form-group">
-                <label for="txtFone">Telefone: </label>
-                <input type="tel" id="txtFone" class="form-control"
-                    pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"
-                    value="(00)00000-0000"/>
-            </div>
-            <div class="form-group">
-                <label for="txtEmail">Email:</label>
-                <input type="email" id="txtEmail" class="form-control"/>
+                 placeholder="Insira o nome para a camiseta"/>
             </div>
             <div class="form-group">
                 <div class="form-check form-check-inline">
@@ -44,11 +31,40 @@
                     <label class="form-check-label" for="RadioGG">GG</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary float-right">Enviar</button>
+            <div class="form-group">
+                <label for="txtColor">Cor: </label>
+                <input type="text" id="txtColor" class="form-control"
+                 placeholder="Informe a cor principal"/>
+            </div>
+            <div class="form-group">
+                <label for="txtEstampa">Estampa:</label>
+                <input type="text" id="txtEstampa" class="form-control"
+                 placeholder="Descreva a estampa da camiseta"/>
+            </div>
+            <div class="form-group">
+                <label for="intQuantidade">Quantidade: </label>
+                <input type="number" id="intQuantidade" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="selFornecedor">Fornecedor:</label>
+                <select id="selFornecedor" class="form-control">
+                    <option value="0">-- Escolha o Farnecedor --</option>
+                    @if (Model.Fornecedores != null)
+                    {
+                        foreach(Fornecedor f in Model.Fornecedores)
+                        {
+                            <option value="@f.Id">@f.nome_fornecedor</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary float-right">Enviar</button>
+            </div>
         </form>
     </div>
     <div class="col-md-8" id="divCadastrado" style="display: none;">
-        <h2>Cliente cadastrado com sucesso !</h2>
+        <h2>T-Shirt cadastrada com sucesso !</h2>
     </div>
 </div>
 <div class="modal" id="modalLoading">
